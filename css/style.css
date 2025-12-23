@@ -64,7 +64,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   height: 70vh;
-  background: url("../IMAGENES/ChatGPT\ Image\ 24\ oct\ 2025\,\ 10_12_06\ a.m..png") center/cover no-repeat;
+  background: url("../img/portada.jpeg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

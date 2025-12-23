@@ -6,7 +6,7 @@ body {
 
 .precios {
     min-height: 100vh;
-    background: url("fondo-barberia.jpg") center/cover no-repeat;
+    background: url("../img/portada.jpeg") center/cover no-repeat;
 }
 
 .overlay {
