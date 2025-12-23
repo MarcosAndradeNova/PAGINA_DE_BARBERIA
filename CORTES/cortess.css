@@ -1,0 +1,86 @@
+/* FONDO */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.precios {
+    min-height: 100vh;
+    background: url("fondo-barberia.jpg") center/cover no-repeat;
+}
+
+.overlay {
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 50px 20px;
+}
+
+/* TITULO */
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+/* LISTA */
+.lista-cortes {
+    max-width: 500px;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+}
+
+.lista-cortes li {
+    margin-bottom: 15px;
+}
+
+.lista-cortes label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lista-cortes label:hover {
+    background: rgba(230,57,70,0.6);
+}
+
+.lista-cortes input {
+    margin-right: 15px;
+}
+
+/* VIP */
+.vip label {
+    border: 2px solid #e63946;
+}
+
+/* BOTÓN */
+.center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #e63946;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b42c36;
+}
+
+.oculto {
+    display: none;
+}

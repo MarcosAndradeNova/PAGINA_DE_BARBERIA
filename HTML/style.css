@@ -1,0 +1,253 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background: #000;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #e63946;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #e63946;
+}
+
+.btn {
+  background: #e63946;
+  padding: 10px 15px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #b42c36;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 70vh;
+  background: url("../IMAGENES/ChatGPT\ Image\ 24\ oct\ 2025\,\ 10_12_06\ a.m..png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 65px;
+  font-weight: 900;
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ===== PRODUCTOS ===== */
+.productos {
+  padding: 50px 20px;
+}
+
+#buscar {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  background: #222;
+  color: #fff;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.producto {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 20%;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto h3 {
+    margin: 10px 0;
+}
+
+.precio {
+    color: #00ff99;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.producto button {
+    background: #00ff99;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ===== CARRITO ===== */
+.carrito {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+#itemsCarrito p {
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ===== PAGO ===== */
+.pago {
+  text-align: center;
+  padding: 40px;
+}
+
+.qr {
+  width: 250px;
+  margin: 15px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+
+/* ====================================================== */
+/* ===================== RESPONSIVO ====================== */
+/* ====================================================== */
+
+/* ===== Móviles pequeños ===== */
+@media (max-width: 480px) {
+  
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .navbar nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .hero-text h2 {
+    font-size: 18px;
+  }
+
+  .btn-hero {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* ===== Tablets ===== */
+@media (max-width: 768px) {
+
+  .navbar nav a {
+    margin-right: 0;
+  }
+
+  .hero {
+    height: 60vh;
+    padding: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+}
+
+/* ===== Laptops medianos ===== */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 55px;
+  }
+
+  .hero-text h2 {
+    font-size: 25px;
+  }
+}

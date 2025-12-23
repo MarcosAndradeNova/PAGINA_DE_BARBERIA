@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="reservas.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Barber's <span>Style</span></div>
+    <nav>
+        <a href="../HTML/index.html">Inicio</a>
+        <a href="../PRODUCTOS/productos.html">Productos</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="precios.html">Precios</a>
+    </nav>
+</header>
+
+<section class="reservas">
+    <h2>Reserva tu Barbero</h2>
+    <p class="sub">Selecciona un barbero para ver sus horarios disponibles.</p>
+
+    <div class="lista-barberos">
+
+        <!-- BARBERO 1 -->
+        <label class="barbero">
+            <input type="radio" name="barbero" value="Carlos">
+            <img src="https://i.imgur.com/G0y5XvU.jpeg" alt="Carlos">
+            <span class="nombre">Carlos</span>
+        </label>
+
+        <!-- BARBERO 2 -->
+        <label class="barbero">
+            <input type="radio" name="barbero" value="Javier">
+            <img src="https://i.imgur.com/kM4oB1h.jpeg" alt="Javier">
+            <span class="nombre">Javier</span>
+        </label>
+
+        <!-- BARBERO 3 -->
+        <label class="barbero">
+            <input type="radio" name="barbero" value="Luis">
+            <img src="https://i.imgur.com/5HGo8TV.jpeg" alt="Luis">
+            <span class="nombre">Luis</span>
+        </label>
+
+    </div>
+
+    <!-- HORARIOS -->
+    <div id="horarios" class="horarios oculto">
+        <h3>Horarios disponibles</h3>
+        <div id="listaHorarios"></div>
+    </div>
+
+    <!-- BOTÓN PAGAR -->
+    <div class="center">
+       <a id="btnCortes" href="../CORTES/cortes.html" class="btn oculto">
+        Cortes
+    </a>
+    </div>
+</section>
+
+<script src="reservas.js"></script>
+
+</body>
+</html>
