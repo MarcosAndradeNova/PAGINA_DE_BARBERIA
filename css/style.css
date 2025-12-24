@@ -118,6 +118,16 @@ body {
 .info-final p {
   margin: 2px;
 }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
 /* ===== PRODUCTOS ===== */
 .productos {
     padding: 50px 20px;
@@ -220,17 +230,34 @@ footer {
 /* ===== Móviles pequeños ===== */
 @media (max-width: 480px) {
   
+  .menu-toggle {
+    display: block;
+  }
+
   .navbar {
     flex-direction: row;
-    text-align: left;
-    gap: 8px;
+    justify-content: space-between;
   }
 
   .navbar nav {
+    display: none;
     flex-direction: column;
-    gap: 8px;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 15px 0;
   }
 
+  .navbar nav a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
   .hero-text h1 {
     font-size: 40px;
   }
