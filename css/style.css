@@ -207,13 +207,32 @@ body {
 
 /* ===== PAGO ===== */
 .pago {
+  max-width: 400px;
+  margin: 40px auto;
   text-align: center;
-  padding: 40px;
 }
 
 .qr {
-  width: 250px;
+  width: 220px;
+  margin: 20px 0;
+}
+
+.subir {
+  display: block;
+  background: #222;
+  padding: 12px;
+  border-radius: 6px;
   margin: 15px 0;
+  cursor: pointer;
+}
+
+.subir input {
+  display: none;
+}
+.btn_whassap{
+  background-color: #1f1f1f;   /* oscuro */
+  color: #ffffff;
+  height: 23px;
 }
 
 /* ===== FOOTER ===== */
@@ -283,6 +302,9 @@ footer {
   footer {
     font-size: 14px;
   }
+  .btn_whassap{
+  height: 15px;
+}
 }
 
 /* ===== Tablets ===== */

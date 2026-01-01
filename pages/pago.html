@@ -2,28 +2,32 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reservar Cita</title>
+  <title>Pago por QR</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<section class="reserva">
-  <h2>Selecciona tu Peluquero</h2>
+<header class="navbar">
+  <div class="logo">Barber's <span>Style</span></div>
+</header>
 
-  <select id="peluquero">
-    <option value="">-- Selecciona --</option>
-    <option value="juan">Juan</option>
-    <option value="carlos">Carlos</option>
-    <option value="pedro">Pedro</option>
-  </select>
+<section class="pago">
+  <h2>Escanea el QR para pagar</h2>
 
-  <h2>Selecciona Horario</h2>
-  <div id="horarios" class="horarios"></div>
+  <img src="../img/qr.jpeg" alt="QR de pago" class="qr">
 
-  <button id="pagar" class="btn" disabled>Pagar Reserva</button>
+  <p>Total a pagar: <strong>Bs <span id="total"></span></strong></p>
+
+  <label class="subir">
+    Subir comprobante
+    <input type="file" id="comprobante" accept="image/*">
+  </label>
+
+  <button id="enviarWhatsapp" class="btn_whassap" disabled>
+    Enviar comprobante por WhatsApp
+  </button>
 </section>
 
-<script src="../js/reservas.js"></script>
+<script src="../js/pago.js"></script>
 </body>
 </html>
-

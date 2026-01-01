@@ -6,60 +6,122 @@
     <link rel="stylesheet" href="../css/cortess.css">
 </head>
 <body>
+    <!-- ===== NAVBAR ===== -->
+<header class="navbar">
+    <div class="logo">Barber's <span>Style</span></div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav>
+        <a class="link" href="../index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="Reservas.html">Reservas</a>
+        <a href="cortes.html">Precios</a>
+    </nav>
+    
+</header>
+
 
 <section class="precios">
     <div class="overlay">
 
         <h2>Servicios y Cortes</h2>
 
-        <!-- LISTA DE SERVICIOS -->
+        <!-- LISTA SOLO INFORMATIVA -->
         <ul class="lista-cortes">
+
             <li>
                 <label>
-                    <input type="checkbox" value="Corte clásico - Bs 30">
-                    Corte clásico <span>Bs 30</span>
+                    Perfilado de cejas <span>Bs 5</span>
                 </label>
             </li>
 
             <li>
                 <label>
-                    <input type="checkbox" value="Corte moderno - Bs 40">
-                    Corte moderno <span>Bs 40</span>
+                    Mascarilla de carbon  <span>Bs 5</span>
                 </label>
             </li>
 
             <li>
                 <label>
-                    <input type="checkbox" value="Perfilado de barba - Bs 20">
-                    Perfilado de barba <span>Bs 20</span>
+                    Perfilado o afeitado de barba <span>Bs 20</span>
                 </label>
             </li>
 
             <li>
                 <label>
-                    <input type="checkbox" value="Lavado de cabeza - Bs 10">
-                    Lavado de cabeza <span>Bs 10</span>
+                    Lavado de cabeza  <span>Bs 10</span>
                 </label>
             </li>
 
-            <li class="vip">
+            <li>
                 <label>
-                    <input type="checkbox" value="Ondulado permanente - Bs 150">
+                    Peinado con cera <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    Diseños e iniciales <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label>
                     Ondulado permanente <span>Bs 150</span>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    Cortes modernos <span>Bs 40</span>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    Cortes clasicos <span>Bs 30</span>
+                </label>
+            </li>
+
+        </ul>
+
+        <h2>Servicios VIP</h2>
+        <h3>PAQUETE DIAMANTE</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label>
+                    Corte de pelo<br>
+                    Perfilado de cejas<br>
+                    Afeitado o Perfilado de barba<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 70</span>
+                </label>
+            </li>
+        </ul>
+        <h3>PAQUETE ORO</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label>
+                    Corte de pelo<br>
+                    Perfilado de cejas<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 50</span>
+                </label>
+            </li>
+        </ul>
+        <h3>PAQUETE PLATA</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label>
+                    Corte de pelo(clasico)<br>
+                    Perfilado de cejas<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 30</span>
                 </label>
             </li>
         </ul>
 
-        <!-- BOTÓN PAGAR -->
-        <div class="center">
-            <a href="pago.html" id="btnPagar" class="btn oculto">
-                Pagar
-            </a>
-        </div>
-
     </div>
 </section>
 
-<script src="../js/cortes.js"></script>
 </body>
 </html>

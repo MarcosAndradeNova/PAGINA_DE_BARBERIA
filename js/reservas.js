@@ -1,58 +1,56 @@
-const barberos = document.querySelectorAll('input[name="barbero"]');
-const horariosBox = document.getElementById("horarios");
+const barberos = {
+  Carlos: ["09:00", "10:00", "11:00", "14:00", "15:00"],
+  Javier: ["10:00", "11:00", "12:00", "16:00"],
+  Luis: ["09:30", "10:30", "13:00", "15:30"]
+};
+
+const radios = document.querySelectorAll('input[name="barbero"]');
+const horariosDiv = document.getElementById("horarios");
 const listaHorarios = document.getElementById("listaHorarios");
 const btnCortes = document.getElementById("btnCortes");
 
+let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 let barberoSeleccionado = null;
 let horarioSeleccionado = null;
 
-// Generar horarios de 8am a 9pm
-function generarHorarios() {
-    const horas = [];
-    for (let h = 8; h <= 21; h++) {
-        horas.push(`${h}:00`);
+// elegir barbero
+radios.forEach(radio => {
+  radio.addEventListener("change", () => {
+    barberoSeleccionado = radio.value;
+    mostrarHorarios();
+  });
+});
+
+function mostrarHorarios() {
+  listaHorarios.innerHTML = "";
+  horariosDiv.classList.remove("oculto");
+  btnCortes.classList.add("oculto");
+
+  const horarios = barberos[barberoSeleccionado];
+
+  const ocupados = reservas
+    .filter(r => r.barbero === barberoSeleccionado)
+    .map(r => r.horario);
+
+  horarios.forEach(hora => {
+    if (!ocupados.includes(hora)) {
+      const btn = document.createElement("button");
+      btn.textContent = hora;
+      btn.className = "hora";
+
+      btn.onclick = () => seleccionarHorario(hora);
+      listaHorarios.appendChild(btn);
     }
-    return horas;
+  });
 }
 
-// Cuando se selecciona un barbero
-barberos.forEach(barbero => {
-    barbero.addEventListener("change", () => {
-        barberoSeleccionado = barbero.value;
-        horarioSeleccionado = null;
-        btnCortes.classList.add("oculto");
+function seleccionarHorario(hora) {
+  horarioSeleccionado = hora;
 
-        listaHorarios.innerHTML = "";
-        horariosBox.classList.remove("oculto");
+  localStorage.setItem("reservaActual", JSON.stringify({
+    barbero: barberoSeleccionado,
+    horario: horarioSeleccionado
+  }));
 
-        const reservas = JSON.parse(localStorage.getItem("reservas")) || {};
-        const horarios = generarHorarios();
-
-        horarios.forEach(hora => {
-            const div = document.createElement("div");
-            div.classList.add("horario");
-            div.textContent = hora;
-
-            // Si el horario está ocupado
-            if (reservas[barberoSeleccionado]?.includes(hora)) {
-                div.classList.add("ocupado");
-            }
-
-            div.addEventListener("click", () => {
-                if (div.classList.contains("ocupado")) return;
-
-                document.querySelectorAll(".horario").forEach(h => 
-                    h.classList.remove("seleccionado")
-                );
-
-                div.classList.add("seleccionado");
-                horarioSeleccionado = hora;
-
-                // Mostrar botón Cortes
-                btnCortes.classList.remove("oculto");
-            });
-
-            listaHorarios.appendChild(div);
-        });
-    });
-});
+  btnCortes.classList.remove("oculto");
+}
