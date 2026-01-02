@@ -191,7 +191,30 @@ body {
     border-radius: 6px;
     cursor: pointer;
 }
-/* ===== CARRITO ===== */
+/*======CARRITO======*/
+.carrito{
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+.carrito h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.carrito h3 {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.carrito h3 span {
+  font-weight: bold;
+}
+
+
+
+/* ===== PAGO ===== */
 .pago {
   max-width: 500px;
   margin: 50px auto;
@@ -275,7 +298,7 @@ footer {
 
 /* ====================================================== */
 /* ===================== RESPONSIVO ====================== */
-/* ---------- TABLETS Y MÓVILES (≤ 768px) ---------- */>
+/* ---------- TABLETS Y MÓVILES (≤ 768px) ---------- */
 @media (max-width: 768px) {
 
   /* ===== NAVBAR ===== */
