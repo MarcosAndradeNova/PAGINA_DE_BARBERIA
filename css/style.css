@@ -14,11 +14,11 @@ body {
 /* ===== NAVBAR ===== */
 .navbar {
   width: 100%;
-  height: 5%;
   background: #000;
-  padding: 15px 25px;
-  display: flex; 
+  padding: 15px 20px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -192,47 +192,77 @@ body {
     cursor: pointer;
 }
 /* ===== CARRITO ===== */
-.carrito {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-#itemsCarrito p {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* ===== PAGO ===== */
 .pago {
-  max-width: 400px;
-  margin: 40px auto;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   text-align: center;
 }
 
+.pago h2 {
+  margin-bottom: 20px;
+  color: #0d0c0c;
+
+}
+.pago p{
+  color: #000;
+}
+
 .qr {
-  width: 220px;
-  margin: 20px 0;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 2px solid #333;
 }
 
 .subir {
-  display: block;
-  background: #222;
-  padding: 12px;
-  border-radius: 6px;
-  margin: 15px 0;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .subir input {
   display: none;
 }
-.btn_whassap{
-  background-color: #1f1f1f;   /* oscuro */
-  color: #ffffff;
-  height: 23px;
+
+.botones button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn_whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.btn_whatsapp:disabled {
+  background-color: #a3d5b1;
+  cursor: not-allowed;
+}
+
+.btn_descargar {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn_whatsapp:hover:not(:disabled),
+.btn_descargar:hover {
+  opacity: 0.9;
 }
 
 /* ===== FOOTER ===== */
@@ -245,101 +275,196 @@ footer {
 
 /* ====================================================== */
 /* ===================== RESPONSIVO ====================== */
-/* ====================================================== */
+/* ---------- TABLETS Y MÓVILES (≤ 768px) ---------- */>
+@media (max-width: 768px) {
 
-/* ===== Móviles pequeños ===== */
-@media (max-width: 480px) {
-  
+  /* ===== NAVBAR ===== */
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
   .menu-toggle {
     display: block;
   }
 
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
   .navbar nav {
     display: none;
-    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
     width: 100%;
     background: #000;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 15px 0;
-  }
-
-  .navbar nav a {
-    padding: 10px;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 10px 0;
   }
 
   .navbar nav.active {
     display: flex;
   }
+
+  .navbar nav a {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .btn_car {
+    padding: 8px 12px;
+    font-size: 15px;
+    margin-top: 0;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 65vh;
+    padding: 20px;
+  }
+
   .hero-text h1 {
-    font-size: 40px;
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .hero-text h2 {
+    font-size: 20px;
+  }
+
+  .btn-hero {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  /* ===== PRODUCTOS ===== */
+  .productos {
+    padding: 30px 15px;
+  }
+
+  #buscar {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    justify-items: center;
+  }
+
+  .producto {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .producto img {
+    height: 160px;
+  }
+
+  /* ===== PAGO / QR ===== */
+  .pago {
+    max-width: 92%;
+    padding: 15px;
+  }
+
+  .pago h2 {
+    font-size: 22px;
+  }
+
+  .qr {
+    width: 170px;
+    height: 170px;
+  }
+
+  .subir {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .botones button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    font-size: 14px;
+    padding: 20px;
+  }
+}
+
+/* ---------- MÓVILES PEQUEÑOS (≤ 480px) ---------- */
+@media (max-width: 480px) {
+
+  /* ===== NAVBAR ===== */
+  .logo {
+    font-size: 20px;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .navbar nav a {
+    font-size: 16px;
+  }
+
+  .btn_car {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
   }
 
   .hero-text h2 {
     font-size: 18px;
   }
 
-  .btn-hero {
-    font-size: 16px;
-    padding: 10px 18px;
-  }
-
+  /* ===== PRODUCTOS ===== */
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .card {
-    padding: 15px;
+  .producto {
+    max-width: 100%;
   }
 
-  footer {
+  /* ===== PAGO ===== */
+  .qr {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pago h2 {
+    font-size: 20px;
+  }
+
+  .subir {
     font-size: 14px;
   }
-  .btn_whassap{
-  height: 15px;
-}
-}
 
-/* ===== Tablets ===== */
-@media (max-width: 768px) {
-
-  .navbar nav a {
-    margin-right: 0;
+  /* ===== INFO FINAL ===== */
+  .info-final {
+    font-size: 13px;
+    padding: 15px;
+    text-align: center;
   }
 
-  .hero {
-    height: 60vh;
-    padding: 20px;
-  }
-
-  .hero-text h1 {
-    font-size: 50px;
-  }
-
-  .hero-text h2 {
-    font-size: 22px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-
-}
-
-/* ===== Laptops medianos ===== */
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 55px;
-  }
-
-  .hero-text h2 {
-    font-size: 25px;
+  /* ===== BOTONES ===== */
+  .btn-hero,
+  .btn_whatsapp,
+  .btn_descargar {
+    font-size: 14px;
   }
 }

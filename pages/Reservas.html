@@ -1,67 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas</title>
-    <link rel="stylesheet" href="../css/reservas.css">
+  <meta charset="UTF-8">
+  <title>Reservas</title>
+  <link rel="stylesheet" href="../css/reservas.css">
 </head>
 <body>
 
 <header class="navbar">
-    <div class="logo">Barber's <span>Style</span></div>
-    <nav>
-        <a href="../index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="reservas.html">Reservas</a>
-        <a href="cortes.html">Precios</a>
-    </nav>
+  <div class="logo">Barber's <span>Style</span></div>
 </header>
 
 <section class="reservas">
-    <h2>Reserva tu Barbero</h2>
-    <p class="sub">Selecciona un barbero para ver sus horarios disponibles.</p>
+  <h2>Reserva tu Barbero</h2>
 
-    <div class="lista-barberos">
+<!-- BARBEROS -->
+  <div class="lista-barberos">
+    <label class="barbero">
+      <input type="radio" name="barbero" value="Carlos">
+      <img src="../img/peluqeros.jpeg">
+      <span class="nombre">Carlos</span>
+    </label>
 
-        <!-- BARBERO 1 -->
-        <label class="barbero">
-            <input type="radio" name="barbero" value="Carlos">
-            <img src="../img/peluqeros.jpeg" alt="Carlos">
-            <span class="nombre">Carlos</span>
-        </label>
+    <label class="barbero">
+      <input type="radio" name="barbero" value="Javier">
+      <img src="../img/peluqeros.jpeg">
+      <span class="nombre">Javier</span>
+    </label>
+  </div>
 
-        <!-- BARBERO 2 -->
-        <label class="barbero">
-            <input type="radio" name="barbero" value="Javier">
-            <img src="../img/peluqeros.jpeg" alt="Javier">
-            <span class="nombre">Javier</span>
-        </label>
+  <!-- HORARIOS -->
+  <div id="horarios" class="horarios oculto">
+    <h3>Horarios disponibles</h3>
+    <div id="listaHorarios"></div>
+  </div>
 
-        <!-- BARBERO 3 -->
-        <label class="barbero">
-            <input type="radio" name="barbero" value="Luis">
-            <img src="../img/peluqeros.jpeg" alt="Luis">
-            <span class="nombre">Luis</span>
-        </label>
-
-    </div>
-
-    <!-- HORARIOS -->
-    <div id="horarios" class="horarios oculto">
-        <h3>Horarios disponibles</h3>
-        <div id="listaHorarios"></div>
-    </div>
-
-    <!-- BOTÓN PAGAR -->
-    <div class="center">
-       <a id="btnCortes" href="cortes.html" class="btn oculto">
-        Cortes
-    </a>
-    </div>
+  <div class="center">
+    <button id="btnReservar" class="btn oculto">Reservar y pagar</button>
+  </div>
 </section>
 
 <script src="../js/reservas.js"></script>
-
 </body>
 </html>

@@ -1,56 +1,90 @@
-const barberos = {
-  Carlos: ["09:00", "10:00", "11:00", "14:00", "15:00"],
-  Javier: ["10:00", "11:00", "12:00", "16:00"],
-  Luis: ["09:30", "10:30", "13:00", "15:30"]
-};
-
-const radios = document.querySelectorAll('input[name="barbero"]');
-const horariosDiv = document.getElementById("horarios");
-const listaHorarios = document.getElementById("listaHorarios");
-const btnCortes = document.getElementById("btnCortes");
-
 let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 let barberoSeleccionado = null;
 let horarioSeleccionado = null;
 
-// elegir barbero
-radios.forEach(radio => {
-  radio.addEventListener("change", () => {
-    barberoSeleccionado = radio.value;
+// LIMPIAR RESERVAS PENDIENTES (30 min)
+function limpiarPendientes() {
+  reservas = reservas.filter(r =>
+    r.estado === "confirmado" ||
+    Date.now() - r.creadoEn < 30 * 60 * 1000
+  );
+  localStorage.setItem("reservas", JSON.stringify(reservas));
+}
+limpiarPendientes();
+
+// HORARIOS BASE
+const horariosBase = [
+  "08:00","09:00","10:00","11:00",
+  "14:00","15:00","16:00","17:00"
+];
+
+// SELECCIÓN DE BARBERO
+document.querySelectorAll("input[name='barbero']").forEach(input => {
+  input.addEventListener("change", () => {
+    barberoSeleccionado = input.value;
     mostrarHorarios();
   });
 });
 
+// MOSTRAR HORARIOS DISPONIBLES
 function mostrarHorarios() {
-  listaHorarios.innerHTML = "";
-  horariosDiv.classList.remove("oculto");
-  btnCortes.classList.add("oculto");
+  const cont = document.getElementById("listaHorarios");
+  const bloque = document.getElementById("horarios");
+  const btn = document.getElementById("btnReservar");
 
-  const horarios = barberos[barberoSeleccionado];
+  cont.innerHTML = "";
+  bloque.classList.remove("oculto");
+  btn.classList.add("oculto");
 
-  const ocupados = reservas
-    .filter(r => r.barbero === barberoSeleccionado)
-    .map(r => r.horario);
+  const horaActual = new Date().getHours();
 
-  horarios.forEach(hora => {
-    if (!ocupados.includes(hora)) {
-      const btn = document.createElement("button");
-      btn.textContent = hora;
-      btn.className = "hora";
+  horariosBase.forEach(h => {
+    const hora = parseInt(h.split(":")[0]);
 
-      btn.onclick = () => seleccionarHorario(hora);
-      listaHorarios.appendChild(btn);
-    }
+    const ocupado = reservas.some(r =>
+      r.barbero === barberoSeleccionado &&
+      r.horario === h &&
+      r.estado === "confirmado"
+    );
+
+    if (ocupado || hora < horaActual) return;
+
+    const div = document.createElement("div");
+    div.className = "horario";
+    div.textContent = h;
+
+    div.addEventListener("click", () => {
+      document.querySelectorAll(".horario").forEach(x => x.classList.remove("seleccionado"));
+      div.classList.add("seleccionado");
+      horarioSeleccionado = h;
+      btn.classList.remove("oculto");
+    });
+
+    cont.appendChild(div);
   });
 }
 
-function seleccionarHorario(hora) {
-  horarioSeleccionado = hora;
+// CREAR RESERVA PENDIENTE
+document.getElementById("btnReservar").addEventListener("click", () => {
+  if (!barberoSeleccionado || !horarioSeleccionado) return;
 
-  localStorage.setItem("reservaActual", JSON.stringify({
+  const reserva = {
+    id: crypto.randomUUID(),
     barbero: barberoSeleccionado,
-    horario: horarioSeleccionado
-  }));
+    horario: horarioSeleccionado,
+    servicio: "Servicio estándar",
+    estado: "pendiente",
+    creadoEn: Date.now()
+  };
 
-  btnCortes.classList.remove("oculto");
-}
+  reservas.push(reserva);
+  localStorage.setItem("reservas", JSON.stringify(reservas));
+
+  alert(
+    "✅ Reserva creada.\n\n" +
+    "Envía el pago por WhatsApp con este ID:\n\n" +
+    reserva.id
+  );
+
+  window.location.href = "pago.html";
+});

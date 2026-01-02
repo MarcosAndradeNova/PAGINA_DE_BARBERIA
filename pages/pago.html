@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pago por QR</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -16,16 +17,17 @@
 
   <img src="../img/qr.jpeg" alt="QR de pago" class="qr">
 
-  <p>Total a pagar: <strong>Bs <span id="total"></span></strong></p>
+  <p>Total a pagar: <strong>Bs <span id="total">0</span></strong></p>
 
   <label class="subir">
-    Subir comprobante
+    Subir comprobante de pago
     <input type="file" id="comprobante" accept="image/*">
   </label>
 
-  <button id="enviarWhatsapp" class="btn_whassap" disabled>
-    Enviar comprobante por WhatsApp
-  </button>
+  <div class="botones">
+    <button id="enviarWhatsapp" class="btn_whatsapp" disabled>📩 Enviar recibo por WhatsApp</button>
+    <button id="descargarComprobante" class="btn_descargar" disabled>📥 Descargar recibo</button>
+  </div>
 </section>
 
 <script src="../js/pago.js"></script>
