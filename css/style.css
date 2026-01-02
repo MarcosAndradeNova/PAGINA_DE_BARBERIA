@@ -27,6 +27,7 @@ body {
 .logo {
   font-size: 25px;
   font-weight: bold;
+  align-items: center;
 }
 
 .logo span {
@@ -211,8 +212,6 @@ body {
 .carrito h3 span {
   font-weight: bold;
 }
-
-
 
 /* ===== PAGO ===== */
 .pago {
