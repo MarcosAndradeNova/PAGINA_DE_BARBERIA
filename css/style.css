@@ -317,9 +317,9 @@ footer {
   top: 65px;
 
   /* 👇 CAMBIOS CLAVE */
-  left: 20%;
+  right: 30%;
   transform: translateX(-50%);
-  width: 60%;              /* 👈 tamaño de la ventanita */
+  width: 45%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
   
   background: #000;
