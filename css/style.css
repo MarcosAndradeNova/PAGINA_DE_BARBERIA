@@ -459,10 +459,12 @@ footer {
   /* ===== PRODUCTOS ===== */
   .grid {
     grid-template-columns: 2fr;
+    justify-items: left;
   }
 
   .producto {
     max-width: 50%;
+    height: 300px;
   }
 
   /* ===== PAGO ===== */
