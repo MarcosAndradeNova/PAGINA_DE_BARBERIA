@@ -311,30 +311,37 @@ footer {
     display: block;
   }
 
-  .navbar nav {
-    display: none;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background: #000;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding: 10px 0;
-  }
+.navbar nav {
+  display: none;
+  position: absolute;
+  top: 65px;
+
+  /* 👇 CAMBIOS CLAVE */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;              /* 👈 tamaño de la ventanita */
+  max-width: 300px;        /* 👈 límite bonito */
+  
+  background: #000;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;     /* 👈 look de ventana */
+  padding: 10px 0;
+}
 
   .navbar nav.active {
     display: flex;
   }
 
   .navbar nav a {
-    width: 100%;
-    padding: 12px 0;
-    font-size: 18px;
-    text-align: center;
-  }
-
+  width: 100%;
+  padding: 14px 0;
+  font-size: 18px;
+  text-align: center;
+}
+.navbar nav a:not(:last-child) {
+  border-bottom: 1px solid #222;
+}
   .btn_car {
     padding: 8px 12px;
     font-size: 15px;
