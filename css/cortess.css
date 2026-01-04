@@ -194,19 +194,28 @@ h3 {
 }
 
 .navbar nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #000;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
+  display: none;
+  position: absolute;
+  top: 65px;
+
+  /* 👇 CAMBIOS CLAVE */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;              /* 👈 tamaño de la ventanita */
+  max-width: 200px;        /* 👈 límite bonito */
+  
+  background: #000;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;     /* 👈 look de ventana */
+  padding: 10px 0;
 }
 
 .navbar nav.active {
     display: flex;
+}
+.navbar nav a:not(:last-child) {
+  border-bottom: 1px solid #222;
 }
 
 .navbar nav a {

@@ -317,10 +317,10 @@ footer {
   top: 65px;
 
   /* 👇 CAMBIOS CLAVE */
-  left: 50%;
+  left: 20%;
   transform: translateX(-50%);
   width: 60%;              /* 👈 tamaño de la ventanita */
-  max-width: 300px;        /* 👈 límite bonito */
+  max-width: 200px;        /* 👈 límite bonito */
   
   background: #000;
   flex-direction: column;

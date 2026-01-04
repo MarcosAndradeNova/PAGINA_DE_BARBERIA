@@ -49,3 +49,15 @@ buscarInput.addEventListener("input", () => {
     const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(texto));
     mostrarProductos(filtrados);
 });
+/*======menu==============*/
+
+document.addEventListener('DOMContentLoaded', () => {
+const toggle = document.getElementById('menuToggle');
+const nav = document.querySelector('.navbar nav');
+
+if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        });
+    }
+});
