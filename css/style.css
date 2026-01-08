@@ -304,7 +304,7 @@ footer {
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .menu-toggle {
@@ -319,9 +319,9 @@ footer {
   /* 👇 CAMBIOS CLAVE */
   right: 30%;
   transform: translateX(-50%);
-  width: 15%;              /* 👈 tamaño de la ventanita */
+  width: 25%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
-  height: 30%;
+  height: 60%;
   background: #000;
   flex-direction: column;
   align-items: center;
@@ -429,7 +429,7 @@ footer {
 
   /* ===== NAVBAR ===== */
   .logo {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .navbar {
