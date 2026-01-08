@@ -335,7 +335,7 @@ footer {
   .navbar nav a {
   width: 100%;
   padding: 8px 0;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
 }
 .navbar nav a:not(:last-child) {
@@ -437,7 +437,7 @@ footer {
   }
 
   .navbar nav a {
-    font-size: 18px;
+    font-size: 10px;
   }
 
   .btn_car {
