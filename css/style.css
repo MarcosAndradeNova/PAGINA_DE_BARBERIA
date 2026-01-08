@@ -320,7 +320,7 @@ footer {
   right: 20px;
   width: 80%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
-  height: 350px;
+  height: 280px;
   background: #312f2f;
   flex-direction: column;
   align-items: center;
