@@ -317,12 +317,11 @@ footer {
   top: 65px;
 
   /* 👇 CAMBIOS CLAVE */
-  right: 30%;
-  transform: translateX(-50%);
-  width: 25%;              /* 👈 tamaño de la ventanita */
+  right: 20px;
+  width: 80%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
-  height: 60%;
-  background: #000;
+  height: auto;
+  background: #312f2f;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;     /* 👈 look de ventana */
@@ -346,6 +345,7 @@ footer {
     padding: 8px 12px;
     font-size: 15px;
     margin-top: 0;
+    width: 80px;
   }
 
   /* ===== HERO ===== */
@@ -443,6 +443,7 @@ footer {
   .btn_car {
     font-size: 14px;
     padding: 6px 10px;
+
   }
   .menu-toggle {
     font-size: 30px;
