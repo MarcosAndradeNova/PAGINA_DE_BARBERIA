@@ -318,9 +318,9 @@ footer {
 
   /* 👇 CAMBIOS CLAVE */
   right: 20px;
-  width: 60%;              /* 👈 tamaño de la ventanita */
+  width: 40%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
-  height: 190px;
+  height: 160px;
   background: #312f2f;
   flex-direction: column;
   align-items: center;
@@ -335,7 +335,7 @@ footer {
   .navbar nav a {
   width: 100%;
   padding: 6px 0;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
 }
 .navbar nav a:not(:last-child) {
