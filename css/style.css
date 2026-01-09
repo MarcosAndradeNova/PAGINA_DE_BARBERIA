@@ -61,6 +61,14 @@ body {
   margin-top:  10px;
   width: 120px;
 }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
 
 /* ===== HERO ===== */
 .hero {
@@ -120,16 +128,6 @@ body {
 .info-final p {
   margin: 4px;
 }
-
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
-
 /* ===== PRODUCTOS ===== */
 .productos {
     padding: 50px 20px;
@@ -279,20 +277,23 @@ body {
   background-color: #007bff;
   color: white;
 }
+.btn_descargar:disabled{
+  background-color: #7eb7f3;
+  cursor: not-allowed;
+}
 
 .btn_whatsapp:hover:not(:disabled),
-.btn_descargar:hover {
+.btn_descargar:hover:not(:disabled) {
   opacity: 0.9;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER ===== 
 footer {
   background: #000;
   padding: 25px;
   text-align: center;
   margin-top: 40px;
-}
-
+}*/
 /* ====================================================== */
 /* ===================== RESPONSIVO ====================== */
 /* ---------- TABLETS Y MÓVILES (≤ 768px) ---------- */
@@ -317,7 +318,7 @@ footer {
   top: 65px;
 
   /* 👇 CAMBIOS CLAVE */
-  right: 20px;
+  right: 15px;
   width: 40%;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
   height: 160px;

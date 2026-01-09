@@ -254,9 +254,7 @@ body {
 .menu-toggle {
     display: block;
 }
-.navbar nav.active {
-    display: flex;
-}
+
 .navbar nav {
     display: none;
     position: absolute;
