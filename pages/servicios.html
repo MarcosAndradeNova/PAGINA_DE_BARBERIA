@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Cortes</title>
+    <link rel="stylesheet" href="../css/servicios.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+    <div class="logo">Barber's <span>Style</span></div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav>
+        <a class="link" href="../index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="Reservas.html">Reservas</a>
+        <a href="cortes.html">Precios</a>
+    </nav>
+</header>
+
+<section class="precios">
+    <div class="overlay">
+
+        <h2>Servicios y Cortes</h2>
+
+        <!-- ===== SERVICIOS INDIVIDUALES ===== -->
+        <ul class="lista-cortes">
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Perfilado de cejas - Bs 5">
+                    Perfilado de cejas <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Mascarilla de carbón - Bs 5">
+                    Mascarilla de carbón <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Perfilado o afeitado de barba - Bs 20">
+                    Perfilado o afeitado de barba <span>Bs 20</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Lavado de cabeza - Bs 10">
+                    Lavado de cabeza <span>Bs 10</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Peinado con cera - Bs 5">
+                    Peinado con cera <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Diseños e iniciales - Bs 5">
+                    Diseños e iniciales <span>Bs 5</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Ondulado permanente - Bs 150">
+                    Ondulado permanente <span>Bs 150</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Corte moderno - Bs 40">
+                    Cortes modernos <span>Bs 40</span>
+                </label>
+            </li>
+
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="Corte clásico - Bs 30">
+                    Cortes clásicos <span>Bs 30</span>
+                </label>
+            </li>
+
+        </ul>
+
+        <!-- ===== SERVICIOS VIP ===== -->
+        <h2>Servicios VIP</h2>
+
+        <h3>PAQUETE DIAMANTE</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="PAQUETE DIAMANTE - Bs 70">
+                    Corte de pelo<br>
+                    Perfilado de cejas<br>
+                    Afeitado o Perfilado de barba<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 70</span>
+                </label>
+            </li>
+        </ul>
+
+        <h3>PAQUETE ORO</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="PAQUETE ORO - Bs 50">
+                    Corte de pelo<br>
+                    Perfilado de cejas<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 50</span>
+                </label>
+            </li>
+        </ul>
+
+        <h3>PAQUETE PLATA</h3>
+        <ul class="lista-cortes-vip">
+            <li>
+                <label class="servicio">
+                    <input type="checkbox" name="servicio" value="PAQUETE PLATA - Bs 30">
+                    Corte de pelo (clásico)<br>
+                    Perfilado de cejas<br>
+                    Lavado de pelo<br>
+                    Peinado con cera <span>Bs 30</span>
+                </label>
+            </li>
+        </ul>
+
+        <!-- ===== BOTÓN PAGAR ===== -->
+        <div class="center">
+            <a href="pago.html" id="btnPagar" class="btn oculto">Pagar</a>
+        </div>
+
+    </div>
+</section>
+
+<script src="../js/servicio.js"></script>
+</body>
+</html>
