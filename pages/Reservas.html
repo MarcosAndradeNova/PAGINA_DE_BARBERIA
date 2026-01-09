@@ -8,37 +8,52 @@
 <body>
 
 <header class="navbar">
-  <div class="logo">Barber's <span>Style</span></div>
+    <div class="logo">Barber's <span>Style</span></div>
+    <button class="menu-toggle" id="menuToggle">☰</button>
     <nav>
       <a class="link" href="../index.html">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="Reservas.html">Reservas</a>
       <a href="cortes.html">Precios</a>
     </nav>
-    
 </header>
 
 <section class="reservas">
   <h2>Reserva tu Barbero</h2>
+  <div class="sub">Selecciona tu barbero y fecha</div>
 
-<!-- BARBEROS -->
+  <!-- BARBEROS -->
   <div class="lista-barberos">
     <label class="barbero">
       <input type="radio" name="barbero" value="Carlos">
-      <img src="../img/peluqeros.jpeg">
+      <img src="../img/peluqeros.jpeg" alt="Carlos">
       <span class="nombre">Carlos</span>
     </label>
 
     <label class="barbero">
       <input type="radio" name="barbero" value="Javier">
-      <img src="../img/peluqeros.jpeg">
+      <img src="../img/peluqeros.jpeg" alt="Javier">
       <span class="nombre">Javier</span>
-    </label>
+    </label> 
+
+    <label class="barbero">
+      <input type="radio" name="barbero" value="Javier">
+      <img src="../img/peluqeros.jpeg" alt="Javier">
+      <span class="nombre">Javier</span>
+    </label> 
+
+    <label class="barbero">
+      <input type="radio" name="barbero" value="Javier">
+      <img src="../img/peluqeros.jpeg" alt="Javier">
+      <span class="nombre">Javier</span>
+    </label> 
   </div>
 
-  <!-- HORARIOS -->
+  <!-- CALENDARIO -->
   <div id="horarios" class="horarios oculto">
-    <h3>Horarios disponibles</h3>
+    <h3>Selecciona tu fecha</h3>
+    <input type="date" id="calendario" min="" />
+    <h3 style="margin-top:25px">Selecciona la hora</h3>
     <div id="listaHorarios"></div>
   </div>
 
