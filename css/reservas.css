@@ -238,10 +238,6 @@ body {
 .oculto {
     display: none;
 }
-
-/*=========RESPONSIVIDAD=======*/
-
-/* ====================================================== */
 /* ===================== RESPONSIVO ====================== */
 /* ---------- TABLETS Y MÓVILES (≤ 768px) ---------- */
 @media (max-width: 768px) {
@@ -258,7 +254,9 @@ body {
 .menu-toggle {
     display: block;
 }
-
+.navbar nav.active {
+    display: flex;
+}
 .navbar nav {
     display: none;
     position: absolute;
