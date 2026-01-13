@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "goticamax";
+    src: url("fonts/UnifrakturMaguntia-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "goticamed";
+    src:  url("fonts/PirataOne-Regular.woff2") format("woff2"),
+            url("fonts/PirataOne-Regular.woff") format("woff"),
+            url("fonts/PirataOne-Regular.ttf") format("truetype");
+}

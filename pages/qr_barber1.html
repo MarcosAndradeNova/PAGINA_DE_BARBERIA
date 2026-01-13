@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago por QR</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Barber's <span>Style</span></div>
+</header>
+
+<section class="pago">
+  <h2>Escanea el QR para pagar</h2>
+
+  <img src="../img/qr.jpeg" alt="QR de pago" class="qr">
+
+  <p>Total a pagar: <strong>Bs <span id="total">0</span></strong></p>
+
+  <label class="subir">
+    Subir comprobante de pago
+    <input type="file" id="comprobante" accept="image/*">
+  </label>
+
+  <div class="botones">
+    <button id="enviarWhatsapp" class="btn_whatsapp" disabled>📩 Enviar recibo por WhatsApp</button>
+    <button id="descargarComprobante" class="btn_descargar" disabled>📥 Descargar recibo</button>
+  </div>
+</section>
+
+<script src="../js/pago.js"></script>
+</body>
+</html>
