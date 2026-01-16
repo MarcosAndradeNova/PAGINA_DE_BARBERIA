@@ -542,7 +542,7 @@ footer {
     #btnLogin {
     width: 50%;
     font-size: 15px;
-    padding: 10px 20px;
+    padding: 10px 5%;
   }
 
   #loginForm input,
