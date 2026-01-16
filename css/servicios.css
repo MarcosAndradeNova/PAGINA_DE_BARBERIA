@@ -174,41 +174,45 @@ h3 {
 
     .menu-toggle {
         display: block;
-        font-size: 30px;
+        margin-left: auto;
     }
 
-    .navbar nav {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60%;
-        max-width: 200px;
-        background: #000;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 10px;
-        padding: 10px 0;
-    }
+.navbar nav {
+  display: none;
+  position: absolute;
+  top: 65px;
 
+  /* 👇 CAMBIOS CLAVE */
+  right: 15px;
+  width: 40%;              /* 👈 tamaño de la ventanita */
+  max-width: 200px;        /* 👈 límite bonito */
+  height: 160px;
+  background: #312f2f;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;     /* 👈 look de ventana */
+  padding: 6px 0;
+}
+.navbar nav a:not(:last-child) {
+  border-bottom: 1px solid #222;
+}
     .navbar nav.active {
         display: flex;
     }
 
     .navbar nav a {
-        font-size: 18px;
-        padding: 12px 0;
+        font-size: 12px;
+        padding: 6px 0;
         width: 100%;
         text-align: center;
     }
 
     h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .lista-cortes,
@@ -220,12 +224,12 @@ h3 {
     .lista-cortes-vip label {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
     }
 
     .btn {
-        font-size: 18px;
-        padding: 12px 30px;
+        font-size: 16px;
+        padding: 11px 28px;
     }
 }
 
