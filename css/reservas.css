@@ -225,7 +225,7 @@ body {
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
   /* ===== NAVBAR ===== */
   .navbar {
@@ -281,7 +281,8 @@ body {
   }
 
   .lista-barberos {
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
   }
 
   #listaHorarios {
