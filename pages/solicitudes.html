@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel del Barbero</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<h2>Panel del Barbero</h2>
+<p id="barberoNombre"></p>
+
+<!-- FORMULARIO DE CONTRASEÑA -->
+<div id="passwordBox">
+  <p>Ingresa tu contraseña para ver tus solicitudes:</p>
+  <input type="password" id="barberoPass" placeholder="Contraseña">
+  <button id="verBtn">Ver solicitudes</button>
+  <p id="errorPass" style="color:red;"></p>
+</div>
+
+<!-- PANEL DE SOLICITUDES -->
+<div id="panel" style="display:none;">
+  <button onclick="logout()">Cerrar sesión</button>
+
+  <h3>Reservas pendientes</h3>
+  <div id="lista"></div>
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>

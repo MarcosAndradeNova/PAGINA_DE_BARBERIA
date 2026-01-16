@@ -148,6 +148,79 @@ body {
 .info-final p {
   margin: 4px;
 }
+/* CONTENEDOR DEL LOGIN */
+#loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* BOTÓN INICIAR SESIÓN */
+#btnLogin {
+  background-color: #c89b3c;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: 220px;
+  max-width: 90%;
+}
+
+#btnLogin:hover {
+  background-color: #a67c2c;
+  transform: scale(1.05);
+}
+
+/* FORMULARIO DE LOGIN */
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+#loginForm input {
+  display: block;
+  margin: 8px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#loginForm button {
+  background-color: #c89b3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 220px;
+}
+
+#loginForm button:hover {
+  background-color: #a67c2c;
+}
+
+/* MENSAJE DE ERROR */
+#error {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 /* ===== PRODUCTOS ===== */
 .productos {
     padding: 50px 20px;
@@ -278,7 +351,34 @@ body {
 #itemsCarrito .producto .btn-eliminar:hover {
   background-color: #e60000;
 }
+/* BOTÓN SOLICITUDES */
+#btnSolicitudes {
+  display: inline-block;
+  padding: 12px 26px;
+  font-size: 18px;
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #ff6b6b, #c0392b);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
 
+/* Hover efecto */
+#btnSolicitudes:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, #ff4c4c, #a93226);
+}
+
+/* Efecto al hacer click */
+#btnSolicitudes:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
 /* ===== PAGO ===== */
 .pago {
@@ -439,6 +539,17 @@ footer {
     font-size: 16px;
     padding: 10px 20px;
   }
+    #btnLogin {
+    width: 70%;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  #loginForm input,
+  #loginForm button {
+    width: 80%;
+    font-size: 14px;
+  } 
 
   /* ===== PRODUCTOS ===== */
   .productos {
@@ -534,6 +645,18 @@ footer {
 
   .hero-text h2 {
     font-size: 18px;
+  }
+
+    #btnLogin {
+    width: 70%;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  #loginForm input,
+  #loginForm button {
+    width: 80%;
+    font-size: 14px;
   }
 
   /* ===== PRODUCTOS ===== */

@@ -1,75 +1,126 @@
-// ======= ELEMENTOS DOM =======
-const inputPass = document.getElementById('pass');
-const btnLogin = document.querySelector('#login button');
-const loginDiv = document.getElementById('login');
-const panelDiv = document.getElementById('panel');
-const listaDiv = document.getElementById('lista');
-
-// ======= CONTRASEÑAS POR PELUQUERO =======
-const peluqueros = {
+// ===============================
+// BARBEROS Y CONTRASEÑAS
+// ===============================
+const barberos = {
   "Carlos": "1234",
   "Javier": "abcd",
   "Pedro": "5678",
-  "Luis": "4321"
+  "Oscar": "0000"
 };
 
-// ======= LOGIN =======
-function login() {
-  const pass = inputPass.value.trim();
-  let barberoLogueado = null;
+// ===============================
+// ELEMENTOS DOM
+// ===============================
+const barberoNombre = document.getElementById("barberoNombre");
+const passwordBox = document.getElementById("passwordBox");
+const panel = document.getElementById("panel");
+const lista = document.getElementById("lista");
 
-  // Verificar contraseña
-  for (let nombre in peluqueros) {
-    if (peluqueros[nombre] === pass) {
-      barberoLogueado = nombre;
-      break;
-    }
-  }
+const barberoPass = document.getElementById("barberoPass");
+const verBtn = document.getElementById("verBtn");
+const errorPass = document.getElementById("errorPass");
 
-  if (barberoLogueado) {
-    alert(`Bienvenido ${barberoLogueado}`);
-    loginDiv.style.display = 'none';
-    panelDiv.style.display = 'block';
-    mostrarReservas(barberoLogueado);
-  } else {
-    alert("Contraseña incorrecta");
-  }
+// ===============================
+// BARBERO LOGUEADO
+// ===============================
+const barbero = localStorage.getItem("barbero");
+
+if (!barbero) {
+  alert("No hay barbero logueado. Vuelve al inicio.");
+  window.location.href = "../index.html";
 }
 
-// ======= FUNCION PARA MOSTRAR RESERVAS =======
-function mostrarReservas(barbero) {
-  listaDiv.innerHTML = '';
+barberoNombre.textContent = `Barbero: ${barbero}`;
 
-  // Obtener todas las reservas guardadas
-  const reservaGuardada = JSON.parse(localStorage.getItem('reserva') || "[]");
-  const serviciosGuardados = JSON.parse(localStorage.getItem('servicios') || "[]");
+// ===============================
+// CARGAR RESERVAS
+// ===============================
+let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
 
-  // Filtrar por barbero
-  if (!reservaGuardada.barbero || reservaGuardada.barbero !== barbero) {
-    listaDiv.innerHTML = '<p>No hay reservas pendientes para ti.</p>';
+// ===============================
+// VERIFICAR CONTRASEÑA
+// ===============================
+verBtn.addEventListener("click", () => {
+  const pass = barberoPass.value.trim();
+
+  if (barberos[barbero] !== pass) {
+    errorPass.textContent = "Contraseña incorrecta";
     return;
   }
 
-  const div = document.createElement('div');
-  div.classList.add('reserva');
-  div.innerHTML = `
-    <strong>Barbero:</strong> ${reservaGuardada.barbero}<br>
-    <strong>Fecha:</strong> ${reservaGuardada.fecha}<br>
-    <strong>Hora:</strong> ${reservaGuardada.hora}<br>
-    <strong>Servicios:</strong> ${serviciosGuardados.map(s => s.nombre).join(", ")}<br>
-    <strong>Total:</strong> Bs ${serviciosGuardados.reduce((acc, s) => acc + s.precio, 0).toFixed(2)}
-  `;
+  // Correcto
+  passwordBox.style.display = "none";
+  panel.style.display = "block";
+  cargarReservas();
+});
 
-  // Botón para marcar como atendida
-  const btnAtendida = document.createElement('button');
-  btnAtendida.textContent = "Marcar como atendida";
-  btnAtendida.addEventListener('click', () => {
-    localStorage.removeItem('reserva');
-    localStorage.removeItem('servicios');
-    alert("Reserva eliminada");
-    mostrarReservas(barbero);
+// ===============================
+// MOSTRAR SOLO SUS RESERVAS
+// ===============================
+function cargarReservas() {
+  lista.innerHTML = "";
+
+  reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+  const misReservas = reservas.filter(r => r.barbero === barbero);
+
+  if (misReservas.length === 0) {
+    lista.innerHTML = "<p>No tienes reservas pendientes.</p>";
+    return;
+  }
+
+  misReservas.forEach(res => {
+    const div = document.createElement("div");
+    div.classList.add("reserva");
+
+    div.innerHTML = `
+      <p><strong>Cliente ID:</strong> ${res.device_id}</p>
+      <p><strong>Fecha:</strong> ${res.fecha}</p>
+      <p><strong>Hora:</strong> ${res.hora}</p>
+      <p><strong>Servicios:</strong> ${res.servicios.join(", ")}</p>
+      <p><strong>Total:</strong> Bs ${res.total}</p>
+      <p><strong>Estado:</strong> ${res.estado || "Pendiente"}</p>
+
+      <button class="aceptar" ${res.estado ? "disabled" : ""}>Aceptar</button>
+      <button class="rechazar" ${res.estado ? "disabled" : ""}>Rechazar</button>
+    `;
+
+    // ===== ACEPTAR =====
+    div.querySelector(".aceptar").addEventListener("click", () => {
+      actualizarEstado(res.id, "Aceptada");
+      alert("Reserva aceptada");
+      cargarReservas();
+    });
+
+    // ===== RECHAZAR =====
+    div.querySelector(".rechazar").addEventListener("click", () => {
+      actualizarEstado(res.id, "Rechazada");
+      alert("Reserva rechazada");
+      cargarReservas();
+    });
+
+    lista.appendChild(div);
+  });
+}
+
+// ===============================
+// ACTUALIZAR ESTADO
+// ===============================
+function actualizarEstado(id, estado) {
+  reservas = reservas.map(r => {
+    if (r.id === id) {
+      r.estado = estado;
+    }
+    return r;
   });
 
-  div.appendChild(btnAtendida);
-  listaDiv.appendChild(div);
+  localStorage.setItem("reservas", JSON.stringify(reservas));
+}
+
+// ===============================
+// LOGOUT
+// ===============================
+function logout() {
+  localStorage.removeItem("barbero");
+  window.location.href = "../index.html";
 }
