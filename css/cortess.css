@@ -185,12 +185,11 @@ h3 {
 }
 
 .logo {
-    font-size: 22px;
+    font-size:18s;
 }
 
 .menu-toggle {
     display: block;
-    font-size: 30px;
 }
 
 .navbar nav {
@@ -219,8 +218,8 @@ h3 {
 }
 
 .navbar nav a {
-    font-size: 18px;
-    padding: 12px 0;
+    font-size: 12px;
+    padding: 6px 0;
     width: 100%;
     text-align: center;
 }

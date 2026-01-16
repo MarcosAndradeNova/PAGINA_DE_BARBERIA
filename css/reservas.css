@@ -1,6 +1,11 @@
 /* ===================== */
 /* ESTILOS GENERALES */
 /* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     background: #111;
@@ -266,7 +271,31 @@ body {
   border-bottom: 1px solid #222;
 }
 
+  .reservas h2 {
+    font-size: 24px;
+  }
+
+  .sub {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
   .lista-barberos {
-    gap: 22px;
+    gap: 20px;
+  }
+
+  #listaHorarios {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+  }
+
+  .hora {
+    padding: 12px 0;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 13px;
   }
 }
