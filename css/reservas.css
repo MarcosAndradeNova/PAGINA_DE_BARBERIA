@@ -281,8 +281,22 @@ body {
   }
 
   .lista-barberos {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, 1fr); 
     gap: 18px;
+  }
+  .barbero {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .barbero img {
+    height: 120px; /* imagen más baja */
+    border-radius: 12px;
+  }
+
+  .barbero .nombre {
+    font-size: 13px;
+    margin-top: 10px;
   }
 
   #listaHorarios {
