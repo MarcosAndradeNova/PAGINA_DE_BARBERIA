@@ -192,12 +192,11 @@ h3 {
 }
 
 .logo {
-    font-size:18s;
+    font-size:18px;
 }
 
 .menu-toggle {
     display: block;
-    margin-left: auto;
 }
 
 .navbar nav {
@@ -206,16 +205,16 @@ h3 {
   top: 65px;
 
   /* 👇 CAMBIOS CLAVE */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;              /* 👈 tamaño de la ventanita */
+  right: 15px;
+  width: 40%;
+  height: 160px;              /* 👈 tamaño de la ventanita */
   max-width: 200px;        /* 👈 límite bonito */
   
-  background: #000;
+  background: #312f2f;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;     /* 👈 look de ventana */
-  padding: 10px 0;
+  padding: 6px 0;
 }
 
 .navbar nav.active {

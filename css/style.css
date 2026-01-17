@@ -648,9 +648,9 @@ footer {
   }
 
     #btnLogin {
-    width: 70%;
+    width: 50px;
     font-size: 15px;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 
   #loginForm input,
