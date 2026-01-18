@@ -1,3 +1,7 @@
+if (!localStorage.getItem("device_id")) {
+  localStorage.setItem("device_id", "CLIENTE-" + Date.now());
+}
+
 // ====== ELEMENTOS DOM ======
 const listaBarberos = document.querySelectorAll('input[name="barbero"]');
 const horariosDiv = document.getElementById('horarios');
@@ -51,9 +55,9 @@ function generarHorarios(barberoElegido, fechaSeleccionada) {
       r.barbero === barberoElegido &&
       r.fecha === fechaSeleccionada &&
       r.hora === h &&
-      r.pago === true
-    );
-
+      r.estado === "Aceptada"
+);
+    
     if (ocupado) {
       btnHora.disabled = true;
       btnHora.classList.add('ocupado');
