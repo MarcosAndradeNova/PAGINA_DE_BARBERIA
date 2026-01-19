@@ -1,16 +1,22 @@
+// ===============================
+// SERVICIOS.JS
+// ===============================
+
 document.addEventListener("DOMContentLoaded", () => {
   const checks = document.querySelectorAll("input[type=checkbox]");
   const btn = document.getElementById("btnPagar");
 
+  // ===== FUNCIÓN PARA ACTUALIZAR SERVICIOS Y TOTAL =====
   function actualizar() {
     const seleccionados = [];
     let total = 0;
 
     checks.forEach(c => {
       if (c.checked) {
+        // Extraemos nombre y precio del valor
         const texto = c.value;
         const precio = Number(texto.match(/\d+/)[0]);
-        seleccionados.push(texto);
+        seleccionados.push({ nombre: texto, precio });
         total += precio;
       }
     });
@@ -24,37 +30,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Escuchar cambios en los checkboxes
   checks.forEach(c => c.addEventListener("change", actualizar));
 
   // ===== BOTÓN PAGAR =====
-  btn.addEventListener("click", e => {
-    e.preventDefault();
-
+  btn.addEventListener("click", () => {
     const reservaTemp = JSON.parse(localStorage.getItem("reserva_temp"));
     const servicios = JSON.parse(localStorage.getItem("serviciosReserva"));
     const total = Number(localStorage.getItem("totalReserva"));
 
-    if (!reservaTemp || !servicios) {
-      alert("Error en la reserva");
+    if (!reservaTemp || !servicios || servicios.length === 0) {
+      alert("Error: falta información de la reserva");
       return;
     }
 
+    // Crear la reserva final
     const nuevaReserva = {
-      ...reservaTemp,
+      id: reservaTemp.id,
+      device_id: reservaTemp.device_id,
+      barbero: reservaTemp.barbero,
+      fecha: reservaTemp.fecha,
+      hora: reservaTemp.hora,
       servicios: servicios,
       total: total,
       pago: true,
       estado: "Pendiente"
     };
 
-    let reservas = JSON.parse(localStorage.getItem("reservas")) || [];
-    reservas.push(nuevaReserva);
-
-    localStorage.setItem("reservas", JSON.stringify(reservas));
+    // Guardar en localStorage
+    const reservasExistentes = JSON.parse(localStorage.getItem("reservas") || "[]");
+    reservasExistentes.push(nuevaReserva);
+    localStorage.setItem("reservas", JSON.stringify(reservasExistentes));
     localStorage.removeItem("reserva_temp");
 
-    window.location.href = "qr_barber1.html";
+    alert("Reserva enviada al barbero ✔");
+
+    // Redirigir a QR
+    window.location.href = "../pages/qr_barber1.html";
   });
+
+  // ===== MENÚ =====
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('.navbar nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+
+  console.log("SERVICIO.JS CARGADO");
 });
 
 // ===== MENÚ =====
